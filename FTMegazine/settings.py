@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-3r4qv%@r-^e0yjgxkh-w8lyef!mj0e4-lp0wezwo^o!!vyx!mq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.6']
+ALLOWED_HOSTS = ['192.168.1.6', '127.0.0.1']
 
 
 # Application definition
@@ -38,7 +38,34 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Megazine',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
+
+
+# CKEDITOR_CONFIGS = {
+#     'default': {
+#         'toolbar': 'full',
+#         'height': 300,
+#         'width': '100%',
+#     },
+# }
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',  # You can customize this
+        'height': 400,
+        'width': '100%',
+        'extraPlugins': ','.join([
+            'codesnippet',  # Allows code formatting
+            'uploadimage',  # Enables image uploads
+        ]),
+    }
+}
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -107,7 +134,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -120,6 +147,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'Megazine', 'Static')]
 # STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

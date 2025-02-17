@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A stylish and responsive article page">
+    <title>Stylish Article Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: #222;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .menu-icon {
+            font-size: 26px;
+            cursor: pointer;
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            background: #333;
+            color: #fff;
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+        }
+
+        .author {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #ddd;
+        }
+
+        /* Article Content */
+        .content {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .content h2 {
+            margin-top: 20px;
+            color: #222;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+        }
+
+        blockquote {
+            background: #eee;
+            padding: 15px;
+            border-left: 5px solid #222;
+            font-style: italic;
+        }
+
+        /* Share Section */
+        .share {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-btn {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px;
+            background: #222;
+            color: #fff;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background: #222;
+            color: #fff;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                background: #222;
+                width: 100%;
+                left: 0;
+                top: 60px;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .content {
+                width: 90%;
+            }
+
+            .hero h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">TechMag</div>
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Tech News</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>The Future of Technology: Innovations Shaping Our World</h1>
+        <p class="author">By John Doe • February 17, 2025</p>
+    </header>
+
+    <!-- Article Content -->
+    <main class="content">
+        <img src="https://source.unsplash.com/1200x600/?technology,future" alt="Technology Future">
+        <p>Technology is evolving at an unprecedented pace, driving innovation across industries. From **AI and robotics** to **green energy and cybersecurity**, the future promises groundbreaking advancements that will reshape our daily lives.</p>
+
+        <h2>AI and Robotics Revolution</h2>
+        <p>Artificial Intelligence (AI) and robotics are transforming various industries, including healthcare, finance, and manufacturing. These technologies enhance efficiency and open new possibilities for automation.</p>
+
+        <h2>Cybersecurity in a Digital Era</h2>
+        <p>With the rise of digital transformation, cybersecurity has become more critical than ever. Businesses must adopt advanced security protocols to safeguard sensitive data.</p>
+
+        <blockquote>“The best way to predict the future is to create it.” — Alan Kay</blockquote>
+
+        <h2>Green Energy and Sustainability</h2>
+        <p>The future of energy lies in sustainability. **Solar power, wind energy, and electric vehicles** are leading the charge toward a greener world.</p>
+    </main>
+
+    <!-- Share Section -->
+    <section class="share">
+        <h3>Share This Article</h3>
+        <div class="social-icons">
+            <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 TechMag. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
